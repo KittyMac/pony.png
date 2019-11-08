@@ -29,12 +29,13 @@ actor Sprite is Flowable
 	be flowReceived(dataIso:Any iso) =>
 		try
 			let bitmap = (consume dataIso) as Bitmap
-			FileExt.bitmapToFile(bitmap, "/tmp/png.raw")?
+			try
+				PNGWriter.write("/tmp/test_png.png", bitmap)?
+			end
 		end
 	
 	be read(filePath:String) =>
-		let png = PNG(this)
-		png.read(filePath)
+		PNGFlowReader(filePath, this)
 
 
 class iso _TestReadPNG is UnitTest
