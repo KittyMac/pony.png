@@ -12,7 +12,7 @@ struct PNGWriteFnStruct
 
 
 primitive PNGWriter
-	fun tag write(filePath:String, bitmap:Bitmap)? =>
+	fun tag write(filePath:String, bitmap:Bitmap box)? =>
 
 		let null = Pointer[None]
 	
