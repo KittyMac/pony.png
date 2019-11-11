@@ -2,3 +2,9 @@ build/*
 TAGS
 tags
 .deps/*
+
+libpng/ios
+libpng/osx
+libpng/src
+*.tar.gz
+*.tar.xz
