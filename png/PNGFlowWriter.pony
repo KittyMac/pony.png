@@ -75,6 +75,8 @@ actor PNGFlowWriter is Flowable
 
 	let target:Flowable tag
 	let filePath:String
+	
+	fun _tag():USize => 116
 
 	new create(filePath':String, target':Flowable tag) =>
 		target = target'

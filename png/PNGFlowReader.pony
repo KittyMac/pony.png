@@ -112,6 +112,8 @@ actor PNGFlowReader
 
 	let target:Flowable tag
 	let filePath:String
+	
+	fun _tag():USize => 115
 
 	new create(filePath':String, target':Flowable tag) =>
 		target = target'
