@@ -1,8 +1,8 @@
 use "path:/usr/lib" if osx
 use "lib:png"
 
-use @pony_malloc[Pointer[U8]](bytes: USize)
-use @pony_free[None](pointer: Pointer[None] tag)
+use @malloc[Pointer[U8]](bytes: USize)
+use @free[None](pointer: Pointer[None] tag)
 use @memcpy[Pointer[None]](dst: Pointer[None], src: Pointer[None], n: USize)
 
 // PNG_EXPORT(int,png_sig_cmp) PNGARG((png_bytep sig, png_size_t start, png_size_t num_to_check));

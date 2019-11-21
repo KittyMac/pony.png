@@ -20,10 +20,10 @@ primitive PNGWriter
 			if size == 0 then
 				Pointer[None]
 			end
-			@pony_malloc(size)
+			@malloc(size)
 		}
 		let free_fn = @{(png_ptr:Pointer[_PngStruct], ptr:Pointer[None]) => 
-			@pony_free(ptr)
+			@free(ptr)
 		}
 		let write_fn = @{(png_ptr:Pointer[_PngStruct] tag, data:Pointer[U8], length:USize) => 
 			let writeStructPtr = @png_get_io_ptr[NullablePointer[PNGWriteFnStruct]](png_ptr)

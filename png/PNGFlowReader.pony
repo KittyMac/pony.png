@@ -26,10 +26,12 @@ primitive PNGReader
 			if size == 0 then
 				Pointer[None]
 			end
-			@pony_malloc(size)
+			@malloc(size)
 		}
 		let free_fn = @{(png_ptr:Pointer[_PngStruct], ptr:Pointer[None]) => 
-			@pony_free(ptr)
+			if ptr.is_null() == false then
+				@free(ptr)
+			end
 		}
 		let read_fn = @{(png_ptr:Pointer[_PngStruct] tag, data:Pointer[None], length:USize) => 
 			let readStructPtr = @png_get_io_ptr[NullablePointer[PNGReadFnStruct]](png_ptr)
