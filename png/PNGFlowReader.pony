@@ -14,7 +14,7 @@ struct PNGReadFnStruct
 
 primitive PNGReader
 	fun tag read(filePath:String):Bitmap iso^ ? =>
-		let pngData = FileExt.fileToByteBlock(filePath)?
+		let pngData = FileExt.fileToArray(filePath)?
 		let null = Pointer[None]
 
 		var offset:USize = 0		

@@ -53,7 +53,7 @@ class iso _TestClear is UnitTest
 		let b = Bitmap(100, 100)
 		b.clear(RGBA.blue())
 		try
-			FileExt.bitmapToFile(b, "/tmp/clear.raw")?
+			FileExt.cpointerToFile(b, "/tmp/clear.raw")?
 		end
 		
 
@@ -67,7 +67,7 @@ class iso _TestFillRect is UnitTest
 		b.fillRect(Rect(50,50,50,50), RGBA(0,0,255,255))
 		b.fillRect(Rect(0,50,50,50), RGBA(255,255,0,255))
 		try
-			FileExt.bitmapToFile(b, "/tmp/fillRect.raw")?
+			FileExt.cpointerToFile(b, "/tmp/fillRect.raw")?
 		end
 
 class iso _TestBlit is UnitTest
@@ -83,7 +83,7 @@ class iso _TestBlit is UnitTest
 		b.blit(25, 25, c)
 		
 		try
-			FileExt.bitmapToFile(b, "/tmp/blit.raw")?
+			FileExt.cpointerToFile(b, "/tmp/blit.raw")?
 		end
 
 class iso _TestBlitOutside is UnitTest
@@ -99,5 +99,5 @@ class iso _TestBlitOutside is UnitTest
 		b.blit(75, 75, c)
 
 		try
-			FileExt.bitmapToFile(b, "/tmp/blit_outside.raw")?
+			FileExt.cpointerToFile(b, "/tmp/blit_outside.raw")?
 		end
