@@ -1,5 +1,6 @@
 use "fileExt"
 use "flow"
+use "bitmap"
 
 use "path:/usr/lib" if osx
 use "lib:png"

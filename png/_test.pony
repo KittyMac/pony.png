@@ -2,6 +2,7 @@ use "fileExt"
 use "ponytest"
 use "files"
 use "flow"
+use "bitmap"
 
 
 actor Main is TestList
