@@ -34,12 +34,12 @@ primitive PNGWriter
 			end
 		}
 	
-		let pngPtr = @png_create_write_struct_2(LIBPNG.png_libpng_ver_string().cpointer(), null, null, null, null, malloc_fn, free_fn)
+		var pngPtr = @png_create_write_struct_2(LIBPNG.png_libpng_ver_string().cpointer(), null, null, null, null, malloc_fn, free_fn)
 		if pngPtr.is_null() then
 			error
 		end
 	
-		let infoPtr = @png_create_info_struct(pngPtr)
+		var infoPtr = @png_create_info_struct(pngPtr)
 		if infoPtr.is_null() then
 			error
 		end
@@ -67,10 +67,12 @@ primitive PNGWriter
 		bitmap.rowPointersFree(rowPointers)
 	
 		@png_write_end[None](pngPtr, null)
+		
+		@png_free_data[None](pngPtr, infoPtr, U32(0x7fff), I32(-1))
+		
+		@png_destroy_write_struct[None](addressof pngPtr, addressof infoPtr)
 	
 		FileExt.close(fd)
-
-		@png_destroy_write_struct[None](pngPtr, infoPtr)
 
 actor PNGFlowWriter is Flowable
 
