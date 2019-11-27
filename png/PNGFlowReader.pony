@@ -43,12 +43,12 @@ primitive PNGReader
 			end
 		}
 			
-		let pngPtr = @png_create_read_struct_2(LIBPNG.png_libpng_ver_string().cpointer(), null, null, null, null, malloc_fn, free_fn)
+		var pngPtr = @png_create_read_struct_2(LIBPNG.png_libpng_ver_string().cpointer(), null, null, null, null, malloc_fn, free_fn)
 		if pngPtr.is_null() then
 			error
 		end
 			
-		let infoPtr = @png_create_info_struct(pngPtr)
+		var infoPtr = @png_create_info_struct(pngPtr)
 		if infoPtr.is_null() then
 			error
 		end
@@ -107,7 +107,7 @@ primitive PNGReader
 			bitmap
 		end
 	
-		@png_destroy_read_struct[None](pngPtr, infoPtr)
+		@png_destroy_read_struct[None](addressof pngPtr, addressof infoPtr, Pointer[None])
 	
 		returnBitmap
 
