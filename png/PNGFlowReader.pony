@@ -59,7 +59,6 @@ primitive PNGReader
 		@png_read_info(pngPtr, infoPtr)
 
 		let bitdepth = @png_get_bit_depth(pngPtr, infoPtr)
-		let channels = @png_get_channels(pngPtr, infoPtr)
 		let color_type = @png_get_color_type(pngPtr, infoPtr)
 			
 		// Convert palette color to true color

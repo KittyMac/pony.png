@@ -11,6 +11,10 @@
 	  {
         "type": "local",
         "local-path": "../pony.bitmap"
+      },
+	  {
+        "type": "local",
+        "local-path": "./"
       }
   ]
 }
