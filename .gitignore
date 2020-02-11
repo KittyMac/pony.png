@@ -8,3 +8,6 @@ libpng/osx
 libpng/src
 *.tar.gz
 *.tar.xz
+
+_corral
+_repos
