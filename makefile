@@ -1,3 +1,5 @@
+bitmap_lib_dir=../pony.bitmap/lib
+
 all: check-folders copy-libs
 	corral run -- ponyc -p ./lib -o ./build/ ./png
 	./build/png
@@ -11,7 +13,7 @@ check-folders:
 	@mkdir -p ./build
 
 copy-libs:
-	@cp ../pony.bitmap/lib/*.a ./lib/
+	@cp ${bitmap_lib_dir}/*.a ./lib/
 
 
 	
@@ -37,6 +39,7 @@ corral-git:
 	@corral add github.com/KittyMac/pony.bitmap.git -q
 	@corral add ./ -q
 
+ci: bitmap_lib_dir = ./_corral/github_com_KittyMac_pony_bitmap/lib/
 ci: corral-git corral-fetch all
 
 dev: corral-local corral-fetch all

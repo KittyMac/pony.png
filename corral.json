@@ -1,16 +1,16 @@
 {
   "deps": [
     {
+      "locator": "/Volumes/Development/Development/pony/pony.fileExt"
+    },
+    {
       "locator": "./"
     },
     {
-      "locator": "github.com/KittyMac/pony.bitmap.git"
+      "locator": "/Volumes/Development/Development/pony/pony.flow"
     },
     {
-      "locator": "github.com/KittyMac/pony.fileExt.git"
-    },
-    {
-      "locator": "github.com/KittyMac/pony.flow.git"
+      "locator": "/Volumes/Development/Development/pony/pony.bitmap"
     }
   ],
   "info": {}
